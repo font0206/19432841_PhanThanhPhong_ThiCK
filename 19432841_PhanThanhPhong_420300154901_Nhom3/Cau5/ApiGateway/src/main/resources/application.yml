@@ -1,0 +1,20 @@
+server:
+ port: 9191
+spring:
+ config:
+  import: "optional:configserver:"
+ application:
+  name: API-GATEWAY
+ cloud:
+  config:
+   uri: http://localhost:8888
+  gateway:
+   routes:
+   - id: billingService
+     uri: http://localhost:4000/
+     predicates:
+     - Path=/billings/**
+   - id: passengerService
+     uri: http://localhost:4001/
+     predicates:
+     - Path=/passengers/**
