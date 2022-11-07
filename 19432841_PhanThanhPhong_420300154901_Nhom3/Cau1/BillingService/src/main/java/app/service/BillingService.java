@@ -2,8 +2,10 @@ package app.service;
 
 import java.util.List;
 
-import app.entity.Billing;
+import org.springframework.stereotype.Service;
 
+import app.entity.Billing;
+@Service
 public interface BillingService {
 	Billing getOneBill(String id);
 	List<Billing> getAllBill();
