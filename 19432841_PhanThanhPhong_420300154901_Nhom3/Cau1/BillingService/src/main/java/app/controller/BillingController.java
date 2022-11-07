@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import app.dto.BillingDto;
 import app.entity.Billing;
 import app.service.BillingService;
 
@@ -24,7 +25,7 @@ public class BillingController {
 		return service.getAllBill();
 	}
 	@GetMapping("/{id}")
-	public Billing getOne(@PathVariable String id) {
+	public BillingDto getOne(@PathVariable String id) {
 		return service.getOneBill(id);
 	}
 	@PostMapping()
